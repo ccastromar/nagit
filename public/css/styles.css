@@ -1,0 +1,52 @@
+.fa {
+    margin-right: 8px;
+}
+
+.table-fixed table {
+    width: 100%;  
+}
+
+.table-fixed th {
+   
+    height: 32px;
+}
+.table-fixed td {
+    
+    height: 32px;
+}
+.table-fixed  tbody {
+    display: block;
+    width: 100%;  
+}
+.table-fixed  thead {
+    display: block;
+    width: 100%;  
+
+}
+.table-fixed  tbody {
+    overflow-y: auto;
+    height: 150px;
+}
+
+#scrollTop {
+    position:fixed;
+    z-index:999;
+    cursor:pointer;
+    left:0;
+    top:50%;
+    transform:translateY(-50%);
+    padding:12px;
+    color:#fff;
+    background:#007bff;
+    border:none;
+    opacity:0;
+    transition: opacity 0.4s linear;
+  }
+  #scrollTop.visible {
+    opacity:1;
+  }
+
+  .input-group-addon {
+    min-width:100px;
+    text-align:left;
+}
