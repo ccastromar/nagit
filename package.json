@@ -1,0 +1,21 @@
+{
+  "name": "nagit",
+  "version": "1.0.0",
+  "description": "NEM API Graphical Interactive Tool",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "i18n": "^0.8.3"
+	},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "nem"
+  ],
+  "author": "Carlos Castro Martos",
+  "license": "MIT"
+}
