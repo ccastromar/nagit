@@ -18,6 +18,8 @@ enables faster and simpler development of NEM Projects.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+Currently you can test the spanish version at https://tutoriales.online/nagit
+
 ### Prerequisites
 
 [Node.js](https://nodejs.org/es/download/) to run the app
