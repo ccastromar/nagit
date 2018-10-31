@@ -1,0 +1,265 @@
+<html lang="<%=__("HTML_LANG")%>">
+
+<head>
+  <meta charset="utf-8">
+  <title><%=__("TITULO") %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/" title="<%=__("TITULO")%>">Nagit</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <select id="comboapi" class="form-control mr-sm-2 col-sm-4" onchange="app.selchange('<%=__("HTML_LANG")%>')">
+                    <option value="-1"><%=__("LABEL_SEL_API")%></option>
+                    <optgroup label="<%=__("SEL_NIS")%>">
+                      <option value="8"><%=__("SEL_NIS_STA")%></option>
+                      <option value="16"><%=__("SEL_NIS_INF")%></option>
+                      <option value="17"><%=__("SEL_NIS_EXT")%></option>
+                      <option value="18"><%=__("SEL_NIS_PEER")%></option>
+                      <option value="19"><%=__("SEL_NIS_EXP")%></option>
+                      <option value="20"><%=__("SEL_NIS_HB")%></option>
+                    </optgroup>
+                    <optgroup label="<%=__("SEL_ACC")%>">
+                      <option value="3"><%=__("SEL_ACC_GEN")%></option>
+                      <option value="4"><%=__("SEL_ACC_DATA")%></option>
+                      <option value="21"><%=__("SEL_ACC_PK")%></option>
+                      <option value="9"><%=__("SEL_ACC_IN")%></option>
+                      <option value="10"><%=__("SEL_ACC_OUT")%></option>
+                      <option value="11"><%=__("SEL_ACC_HARV")%></option>
+                      <option value="5"><%=__("SEL_ACC_NS")%></option>
+                      <option value="6"><%=__("SEL_ACC_MOS")%></option>
+                      <option value="22"><%=__("SEL_ACC_LOCK")%></option>
+                      <option value="23"><%=__("SEL_ACC_UNLOCK")%></option>
+                    </optgroup>
+                    <optgroup label="<%=__("SEL_BLK")%>">
+                      <option value="0"><%=__("SEL_BLK_CUR")%></option>
+                      <option value="1"><%=__("SEL_BLK_NUM")%></option>
+                      <option value="12"><%=__("SEL_BLK_10")%></option>
+                    </optgroup>
+                    <optgroup label="<%=__("SEL_NS")%>">
+                      <option value="13"><%=__("SEL_NS_DATA")%></option>
+                      <option value="2"><%=__("SEL_NS_LAST")%></option>
+                    </optgroup>
+                    <optgroup label="<%=__("SEL_MOS")%>">
+                      <option value="7"><%=__("SEL_MOS_NS")%></option>
+                    </optgroup>
+                    <optgroup label="<%=__("SEL_TRX")%>">
+                      <option value="14"><%=__("SEL_TRX_PREP")%></option>
+                    </optgroup>
+                    <optgroup label="<%=__("SEL_UTL")%>">
+                      <option value="15"><%=__("SEL_UTL_QR")%></option>
+                    </optgroup>
+                  </select>
+                <button class="btn btn-outline-success mr-sm-2" onclick="app.selcall()" title="Send request"><i id="spin0" style="margin-right: 1px"></i><%=__("BUTTON_SEND")%></button>
+                <button class="btn btn-outline-info mr-sm-2" id="historyToggle" data-toggle="collapse" data-target="#collapseHistory" title="Show history request data"><%=__("BUTTON_HIST")%></button>
+                <button class="btn btn-outline-info" id="nodeToggle" data-toggle="collapse" data-target="#collapseNode" title="Change NIS Node"><%=__("BUTTON_NODE")%></button>
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="https://nemproject.github.io/" target="_blank"><%=__("MENU_APIREF")%></a>
+                    </li>                   
+               </ul>
+               <span class="navbar-text"><i class="fa fa-globe" aria-hidden="true"></i></span>
+               <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/?lang=es"><%=__("MENU_ES")%></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/?lang=en"><%=__("MENU_EN")%></a>
+                </li>
+              </ul>
+              </div>    
+           
+        </div>
+      </nav>
+
+      <div class="container">
+        <p>&nbsp;</p>
+      </div>
+ 
+  <div class="container">
+    <div class="row well" id="help">
+      <div class="col-sm-12">
+        <div class="alert alert-info">
+          <h2><%-__("INST_H")%></h2>
+          <p><%-__("INST_1")%><br>
+            <%-__("INST_2")%><br>
+            <span class="badge">1</span> <%-__("INST_3")%><br>
+            <span class="badge">2</span> <%-__("INST_4")%><br>
+            <span class="badge">3</span> <%-__("INST_5")%><br>
+            <span class="badge">4</span> <%-__("INST_6")%><br>
+            <span class="badge">5</span> <%-__("INST_7")%><br>
+          </p>
+          <button class="btn btn-danger" onclick="app.closeHelp()"><%=__("BUTTON_DISMISS")%></button>
+        </div>
+      </div>
+    </div>
+    <!--form-->
+   
+
+    <div class="form-group" col-sm-9>
+      <div class="text-info text-left" style="margin-left: 0" id="info"></div>
+    </div>
+
+    <!-- collapse-->
+    <div class="collapse" id="collapseNode">
+        <!-- node set ini-->
+        <div class="card">
+          <h3 class="card-header"><%=__("HEADER_NODE")%></h3>
+          <div class="card-body">
+              <div class="form-row">
+                  <div class="form-group col-sm-2">
+                    <label id="send" class="col-form-label"><span id="customNodeDiv"></span> <%=__("CUST_NODE")%></label>
+                  </div>
+                  <div class="form-group input-group col-sm-3">
+                    <div class="input-group-prepend mb-4">
+                      <span class="input-group-text" id="basic-addon3">http://</span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="<%=__("HOST_PH")%>" id="nishost" size="12" value="">
+                  </div>
+                  <div class="form-group col-sm-1">
+                    <input type="number" min="1" max="65535" class="form-control" placeholder="<%=__("PORT_PH")%>" id="nisport" maxlength="5" size="5" value="">
+                  </div>
+                  <div class="form-group col-sm-1">
+                    <button class="btn btn-primary" onclick="apitool.setNISNode()"><%=__("BUTTON_SAVE")%></button>
+                   
+                  </div>
+                  
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-2">
+                        <label class="col-form-label"><span id="defaultNodeDiv" class="fa fa-check-circle"></span> <%=__("DEF_NODE")%></label>
+                      </div>
+                  <div class="form-group input-group col-sm-3">                    
+                    <select name="red" id="defaultnet" class="form-control">
+                      <option value="T"><%=__("SEL_TESTNET")%></option>
+                      <option value="M" selected><%=__("SEL_MAINNET")%></option>
+                    </select>
+                    <div class="input-group-append mb-4">
+                      <button class="btn btn-primary" onclick="apitool.setNetwork()"><%=__("BUTTON_SAVE")%> </button>
+                    </div>                    
+                  </div>
+                </div>
+            </div>
+           </div>
+           </div> 
+
+    <!-- collapse-->
+    <div class="collapse" id="collapseHistory">
+    <!-- card hist ini-->
+    <div class="card">
+      <h3 class="card-header"><%=__("HEADER_HIST")%></h3>
+      <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-sm-5">
+          <div class="table-responsive" id="historyDiv">
+            
+          </div>
+        </div>
+        <div class="form-group col-sm-7">
+          <div id="histDetail" class="alert alert-info" style="height:200px;overflow:auto"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- card hist end-->
+    </div>
+    <!-- collapse-->
+
+    <!-- card in-->
+    <div class="card">
+      <h3 class="card-header"><%=__("HEADER_INPUT")%> 
+        </h3>
+
+      <div class="card-body">
+        <h5 class="card-title"><%=__("IN_WALLET")%> <button class="btn btn-sm btn-warning" onclick="apitool.delInputWallet()" title="<%=__("PH_CLEAR_IN")%>">
+          <%=__("BUTTON_CLEAR")%></button></h5>
+
+        <div class="form-group col-sm-12">
+          <label><%=__("IN_ADR")%></label>
+          <input type="text" class="form-control" placeholder="<%=__("IN_ADR_PH")%>" id="address" size="40"
+          maxlength="40" value="">
+        </div>
+        <div class="form-group col-sm-12">
+          <label><%=__("IN_PUBKEY")%></label>
+          <input type="text" class="form-control" id="publickey" placeholder="<%=__("IN_PUBKEY_PH")%>" size="64"
+            value="">
+        </div>
+        <div class="form-group col-sm-12">
+          <label><%=__("IN_PRVKEY")%></label>
+          <input type="text" class="form-control" id="privatekey" placeholder="<%=__("IN_PRVKEY_PH")%>" size="64"
+            value="">
+        </div>
+
+        <h5 class="card-title"><%=__("IN_COMMON")%> <button class="btn btn-sm btn-warning" onclick="apitool.delInputCommon()" title="<%=__("PH_CLEAR_IN")%>">
+          <%=__("BUTTON_CLEAR")%></button></h5>
+
+        <div class="form-row">
+          <div class="form-group col-sm-2">
+            <label><%=__("IN_HEIGHT")%></label>
+            <input type="text" class="form-control" id="blocknumber" placeholder="<%=__("IN_BLOCK_PH")%>" size="54" value="">
+          </div>
+          <div class="form-group col-sm-3">
+            <label><%=__("IN_NS")%></label>
+            <input type="text" class="form-control" id="namespace" placeholder="<%=__("IN_NS_PH")%>" size="54" value="">
+          </div>
+          <div class="form-group col-sm-7">
+            <label><%=__("IN_MSG")%></label>
+            <input type="text" class="form-control" id="memo" placeholder="<%=__("IN_MSG_PH")%>" size="54" value="">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-sm-8">
+            <label><%=__("IN_REC")%></label>
+            <input type="text" class="form-control" id="recipient" placeholder="<%=__("IN_REC_PH")%>"
+              size="40" maxlength="40" value="">
+          </div>
+          <div class="form-group col-sm-2">
+              <label><%=__("IN_PAGESIZE")%></label>
+              <input type="text" class="form-control" id="pagesize" placeholder="<%=__("IN_PAGESIZE_PH")%>" size="14" value="">
+            </div>
+          <div class="form-group col-sm-2">
+            <label><%=__("IN_AMOUNT")%></label>
+            <input type="text" class="form-control" id="amount" placeholder="<%=__("IN_AMOUNT_PH")%>" size="14" value="">
+          </div>
+        </div>        
+
+        <!--card end-->
+      </div>
+    </div>
+
+    <!-- card out-->
+    <div class="card">
+      <h3 class="card-header" id="outputId"><%=__("HEADER_OUTPUT")%> 
+      <button class="btn btn-sm btn-warning" onclick="apitool.delOutputdata()" title="<%=__("PH_CLEAR_OUT")%>"><%=__("BUTTON_CLEAR")%></button>
+      </h3>
+
+      <div class="card-body">
+        <div class="col-sm-12" style="overflow: scroll" id="logs0"></div>
+      </div>
+    </div>
+  </div>
+
+  <button id="scrollTop"><%=__("BUTTON_TOP")%></button>
+
+  <script src="/js/jquery-3.2.1.slim.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/prettyjson.js"></script>
+  <script src="/js/apitool.js"></script>
+  <script src="/js/kjua-0.1.1.min.js"></script>
+
+  <script>
+  apitool.init('<%=__("HTML_LANG")%>');
+  </script>
+</body>
+
+</html>
