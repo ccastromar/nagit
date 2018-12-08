@@ -27,6 +27,7 @@
                       <option value="18"><%=__("SEL_NIS_PEER")%></option>
                       <option value="19"><%=__("SEL_NIS_EXP")%></option>
                       <option value="20"><%=__("SEL_NIS_HB")%></option>
+                      <option value="24"><%=__("SEL_NIS_TIME")%></option>
                     </optgroup>
                     <optgroup label="<%=__("SEL_ACC")%>">
                       <option value="3"><%=__("SEL_ACC_GEN")%></option>
@@ -51,6 +52,7 @@
                     </optgroup>
                     <optgroup label="<%=__("SEL_MOS")%>">
                       <option value="7"><%=__("SEL_MOS_NS")%></option>
+                      <option value="25"><%=__("SEL_MOS_SUPPLY")%></option>
                     </optgroup>
                     <optgroup label="<%=__("SEL_TRX")%>">
                       <option value="14"><%=__("SEL_TRX_PREP")%></option>
@@ -218,10 +220,14 @@
         </div>
 
         <div class="form-row">
-          <div class="form-group col-sm-8">
+          <div class="form-group col-sm-6">
             <label><%=__("IN_REC")%></label>
             <input type="text" class="form-control" id="recipient" placeholder="<%=__("IN_REC_PH")%>"
               size="40" maxlength="40" value="">
+          </div>
+          <div class="form-group col-sm-2">
+            <label><%=__("IN_MOSAIC")%></label>
+            <input type="text" class="form-control" id="mosaicname" placeholder="<%=__("IN_MOSAIC_PH")%>" size="10" value="">
           </div>
           <div class="form-group col-sm-2">
               <label><%=__("IN_PAGESIZE")%></label>
@@ -253,8 +259,8 @@
 
   <script src="/js/jquery-3.2.1.slim.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/prettyjson.min.js"></script>
-  <script src="/js/apitool.min.js"></script>
+  <script src="/js/prettyjson.js"></script>
+  <script src="/js/apitool.js"></script>
   <script src="/js/kjua-0.1.1.min.js"></script>
 
   <script>
