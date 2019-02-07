@@ -91,6 +91,7 @@
     "SEL_TRX_PREP":"Prepare Transaction using private key",
     "SEL_UTL":"Utils",
     "SEL_UTL_QR":"Generate QR Code",
-    "HIST_DATE":"Date"
+    "HIST_DATE":"Date",
+    "BUY_COFFEE":"Do yo buy me a coffee?"
     
 }

@@ -50,3 +50,11 @@
     min-width:100px;
     text-align:left;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px; 
+    line-height: 40px; 
+    background-color: #c5c5c5;
+  }

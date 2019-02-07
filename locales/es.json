@@ -91,5 +91,6 @@
     "SEL_TRX_PREP":"Preparar Transacción usando una clave privada",
     "SEL_UTL":"Utiles",
     "SEL_UTL_QR":"Generar Código QR",
-    "HIST_DATE":"Fecha"
+    "HIST_DATE":"Fecha",
+    "BUY_COFFEE":"¿Me invitas a un café?"
 }
