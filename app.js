@@ -31,3 +31,8 @@ let server = app.listen(8000, function () {
    console.log('Express app listening at port 8000');
 
 });
+
+function stop() {
+  server.close();
+  console.log("Server stopped");
+}
